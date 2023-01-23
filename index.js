@@ -40,3 +40,16 @@ function createTimeInEvent(obj, dateStamp) {
     })
     return obj
 }
+
+function createTimeOutEvent(obj, dateStamp) {
+    const dateAndTIme = dateStamp.split(" ")
+
+    obj.timeOutEvents.push({
+        type: "TimeOut",
+        hour: parseInt(dateAndTIme[1]),
+        date: dateAndTIme[0]
+    })
+
+    return obj
+
+}
