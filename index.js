@@ -64,3 +64,10 @@ function hoursWorkedOnDate(obj, date) {
     return hours
 
 }
+
+
+function wagesEarnedOnDate(obj, date) {
+    const hours = hoursWorkedOnDate(obj, date)
+    return hours * obj.payPerHour
+
+}
