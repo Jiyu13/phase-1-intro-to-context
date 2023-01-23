@@ -16,3 +16,12 @@ function createEmployeeRecord(arr) {
         timeOutEvents: []
     }
 }
+
+
+function createEmployeeRecords(arr) {
+    let newArr = []
+    for (let x = 0; x < arr.length ; x++) {
+        newArr.push(createEmployeeRecord(arr[x]))
+    }
+    return newArr
+}
