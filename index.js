@@ -49,7 +49,18 @@ function createTimeOutEvent(obj, dateStamp) {
         hour: parseInt(dateAndTIme[1]),
         date: dateAndTIme[0]
     })
-
     return obj
+}
+
+function hoursWorkedOnDate(obj, date) {
+    const timeIn = obj.timeInEvents.find(event => event.date === date)
+    const timeOut = obj.timeOutEvents.find(event => event.date === date)
+
+    const timeInHour = (timeIn.hour)
+    const timeOutHour = (timeOut.hour)
+
+    const hours = Math.abs(timeInHour - timeOutHour)/100
+
+    return hours
 
 }
