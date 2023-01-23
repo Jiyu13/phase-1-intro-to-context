@@ -85,6 +85,13 @@ function allWagesFor(obj) {
     
    const totalSalay =  salaryList.reduce((acc, cur) => acc + cur, 0)
    return totalSalay
+}
 
+function calculatePayroll(arr) {
+    let salaryList = []
+    arr.forEach(employee => salaryList.push(allWagesFor(employee)))
+
+    const totalSalay =  salaryList.reduce((acc, cur) => acc + cur, 0)
+    return totalSalay
 
 }
