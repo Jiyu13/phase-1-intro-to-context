@@ -69,5 +69,22 @@ function hoursWorkedOnDate(obj, date) {
 function wagesEarnedOnDate(obj, date) {
     const hours = hoursWorkedOnDate(obj, date)
     return hours * obj.payPerHour
+}
+
+
+function allWagesFor(obj) {
+    let salaryList = []
+    for (let x=0; x< obj.timeInEvents.length; x++) {
+        for (let y=0; y< obj.timeOutEvents.length; y++) {
+            if (obj.timeInEvents[x].date === obj.timeOutEvents[y].date) {
+                const date = obj.timeInEvents[x].date
+                salaryList.push(wagesEarnedOnDate(obj, date))
+            }
+        }
+    }
+    
+   const totalSalay =  salaryList.reduce((acc, cur) => acc + cur, 0)
+   return totalSalay
+
 
 }
